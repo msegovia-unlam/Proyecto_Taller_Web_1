@@ -97,20 +97,4 @@ public class ControladorCancion {
 		return new ModelAndView("lista-canciones",model);
 	}
 	
-	@RequestMapping(path = "/buscar-cancion",method = RequestMethod.GET)
-	public ModelAndView buscar(@RequestParam(value =  "busqueda", required = false) String busqueda, RedirectAttributes attributes) {
-		ModelMap model = new ModelMap();
-		List<Cancion> canciones;
-		if(busqueda=="null") {
-			canciones = servicioCancion.getAllCanciones();
-		}else {
-			canciones = servicioCancion.buscarCancionPorNombre(busqueda);
-		}
-		if(canciones.isEmpty()) {
-			String mensaje = "No existen canciones creadas";
-			attributes.addFlashAttribute("mensaje", mensaje);
-		}
-		attributes.addFlashAttribute("canciones",canciones);
-		return new ModelAndView("redirect:/lista-canciones");
-	}
 }
