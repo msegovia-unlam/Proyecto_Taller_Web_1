@@ -71,17 +71,6 @@ public class ControladorCancion {
 	
 	@RequestMapping(path = "/lista-canciones", method = RequestMethod.GET)
 	public ModelAndView listaCanciones(@RequestParam(value =  "busqueda", required = false) String busqueda) {
-		
-		
-		//List<Cancion> canciones = servicioCancion.getAllCanciones();
-		//ModelMap model = new ModelMap();
-		/*
-		model.put("canciones", canciones);
-		if(canciones.isEmpty()) {
-			String mensaje = "No existen canciones creadas";
-			model.put("mensaje", mensaje);
-		}
-		*/
 		ModelMap model = new ModelMap();
 		List<Cancion> canciones;
 		if(busqueda==null || busqueda=="") {
