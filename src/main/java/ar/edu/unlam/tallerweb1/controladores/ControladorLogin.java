@@ -1,14 +1,22 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import ar.edu.unlam.tallerweb1.modelo.Cancion;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
+import ar.edu.unlam.tallerweb1.servicios.Cancion.ServicioCancion;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,10 +29,11 @@ public class ControladorLogin {
 	// dicha clase debe estar anotada como @Service o @Repository y debe estar en un paquete de los indicados en
 	// applicationContext.xml
 	private ServicioLogin servicioLogin;
-
+	private ServicioCancion servicioCancion;
 	@Autowired
-	public ControladorLogin(ServicioLogin servicioLogin){
+	public ControladorLogin(ServicioLogin servicioLogin, ServicioCancion servicioCancion){
 		this.servicioLogin = servicioLogin;
+		this.servicioCancion = servicioCancion;
 	}
 
 	// Este metodo escucha la URL localhost:8080/NOMBRE_APP/login si la misma es invocada por metodo http GET
@@ -52,6 +61,8 @@ public class ControladorLogin {
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(datosLogin.getEmail(), datosLogin.getPassword());
 		if (usuarioBuscado != null) {
 			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
+			request.getSession().setAttribute("NOMBRE", usuarioBuscado.getNombre());
+			request.getSession().setAttribute("ID", usuarioBuscado.getId());
 			return new ModelAndView("redirect:/home");
 		} else {
 			// si el usuario no existe agrega un mensaje de error en el modelo.
@@ -59,11 +70,41 @@ public class ControladorLogin {
 		}
 		return new ModelAndView("login", model);
 	}
-
+	
+	@RequestMapping(path = "/registrarme")
+	public ModelAndView registrarUsuario(@RequestParam("nombre") String nombre, 
+										@RequestParam("email") String email,
+										@RequestParam("clave") String password) {
+		ModelMap model = new ModelMap();
+		Usuario usuario = new Usuario();
+		usuario.setNombre(nombre);
+		usuario.setEmail(email);
+		usuario.setPassword(password);
+		servicioLogin.guardarusuario(usuario);
+		model.put("mensaje", "Se registro correctamente el usuario");
+		return new ModelAndView("registro-usuario", model);
+	}
+	
+	@RequestMapping(path = "/registrar-usuario", method = RequestMethod.GET)
+	public ModelAndView irARegistrarUsuario() {
+		return new ModelAndView("registro-usuario");
+	}
+	
+	@RequestMapping(path = "/cerrar-sesion")
+	public ModelAndView cerrarSesion(HttpServletRequest request) {
+		request.getSession().invalidate();
+		return new ModelAndView("redirect:/login");
+	}
+	
 	// Escucha la URL /home por GET, y redirige a una vista.
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
-	public ModelAndView irAHome() {
-		return new ModelAndView("home");
+	public ModelAndView irAHome(HttpServletRequest request) {
+		List<Cancion> canciones = servicioCancion.getAllCanciones();
+		ModelMap model = new ModelMap();
+		String nombreUsuario = request.getSession().getAttribute("NOMBRE").toString();
+		model.put("nombreUsuario", nombreUsuario);
+		model.put("canciones", canciones);
+		return new ModelAndView("home",model);
 	}
 
 	// Escucha la url /, y redirige a la URL /login, es lo mismo que si se invoca la url /login directamente.

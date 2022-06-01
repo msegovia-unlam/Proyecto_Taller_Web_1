@@ -10,17 +10,23 @@
 </head>
 <body>
 <div class = "container">
+    <a href="login">Login</a>
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <form:form action="registrarme" method="POST" modelAttribute="usuario">
+        <form action="registrarme" method="POST">
             <h3 class="form-signin-heading">Nuevo Usuario</h3>
             <hr class="colorgraph"><br>
-
-            <form:input path="email" id="email" class="form-control" />
-            <form:input path="clave" type="password" id="clave" class="form-control"/>
-
-            <button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
-        </form:form>
-
+			
+			<input name="nombre" type="text" id="nombre" class="form-control" placeholder="Ingresar Nombre"/>
+            <input name="email" type="email" id="email" class="form-control" placeholder="Ingresar Email"/>
+            <input name="clave" type="password" id="clave" class="form-control" placeholder="Ingresar Contraseña"/>
+			<button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" type="submit"> Registrarme</button>
+        </form>
+		
+		<c:if test="${not empty mensaje}">
+            <h4><span>${mensaje}</span></h4>
+            <br>
+        </c:if>
+		
         <c:if test="${not empty error}">
             <h4><span>${error}</span></h4>
             <br>
