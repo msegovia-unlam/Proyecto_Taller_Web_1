@@ -10,11 +10,15 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Bienvenido ${nombreUsuario}</h1>
-		<c:if test="${nombreUsuario!=null}">
-			<a href="lista-canciones" class="btn btn-black">LISTA DE
+		<h1>Bienvenido</h1>
+		<a href="lista-canciones" class="btn btn-black">LISTA DE
 				CANCIONES</a>
+		<c:if test="${nombreUsuario!=null}">
+			<a href="#">${nombreUsuario}</a>
 			<a href="cerrar-sesion">Cerrar sesion</a>
+		</c:if>
+		<c:if test="${nombreUsuario==null}">
+			<a href="login">Iniciar sesion</a>
 		</c:if>
 		<div>
 			<c:if test="${not empty canciones}">

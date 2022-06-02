@@ -13,7 +13,14 @@
 </head>
 <body>
 	<a href="home">Home</a>
-	<a href="agregar-cancion">AGREGAR CANCION</a>
+	<c:if test="${nombreUsuario!=null}">
+		<a href="agregar-cancion">AGREGAR CANCION</a>
+		<a href="#">${nombreUsuario}</a>
+		<a href="cerrar-sesion">Cerrar sesion</a>
+	</c:if>
+	<c:if test="${nombreUsuario==null}">
+		<a href="login">Iniciar sesion</a>
+	</c:if>
 	<form action="lista-canciones">
 		<input type="text" name="busqueda" id="busqueda"
 			placeholder="Buscar por nombre de cancion"> <input
