@@ -55,7 +55,7 @@ public class ControladorCancion {
 			@RequestParam("album") String album) throws IOException {
 		ModelMap model = new ModelMap();
 		String pathArchivo = pathArchivoCancion.replace("idArtista",
-				request.getSession().getAttribute("ID").toString());
+			request.getSession().getAttribute("ID").toString());
 		String pathArchivoGuardado = ArchivosUtils.subirArchivo(archivo, pathArchivo);
 		Usuario artistaGuardado = servicioLogin.buscarPorId((Long) request.getSession().getAttribute("ID"));
 		Cancion cancionAGuardar = new Cancion();

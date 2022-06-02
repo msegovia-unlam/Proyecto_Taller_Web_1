@@ -13,10 +13,9 @@
     <title>Timeless Music</title>
 </head>
 <body>
-    <audio controls autoplay>
+    <video controls autoplay name="media">
         <source src="${cancion.getArchivo()}" type="audio/mpeg">
-        <source src="${cancion.getArchivo()}" type="audio/mp3">
-    </audio>
+    </video>
     
 </body>
 </html>
