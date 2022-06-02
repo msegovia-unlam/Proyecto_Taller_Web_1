@@ -1,15 +1,15 @@
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorLogin.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Usuario.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Artista.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorCancion.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\Cancion\RepositorioCancionImpl.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\Cancion\ServicioCancion.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\Cancion\ServicioCancionImpl.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\Cancion\RepositorioCancion.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioLoginImpl.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\utils\ArchivosUtils.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Cancion.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioUsuario.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioUsuarioImpl.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\DatosLogin.java
-C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioLogin.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\servicios\Cancion\ServicioCancionImpl.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\servicios\Cancion\ServicioCancion.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\repositorios\Cancion\RepositorioCancionImpl.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioLoginImpl.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorLogin.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\repositorios\Cancion\RepositorioCancion.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioUsuario.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioLogin.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorCancion.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorReproductor.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\modelo\Cancion.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\controladores\DatosLogin.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\modelo\Usuario.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\utils\ArchivosUtils.java
+F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioUsuarioImpl.java

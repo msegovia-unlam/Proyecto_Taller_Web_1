@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%--
   Created by IntelliJ IDEA.
   User: MS-D
@@ -11,8 +13,10 @@
     <title>Timeless Music</title>
 </head>
 <body>
-    <audio>
-        <source src="{cancion.pathArchivo}" type="audio/mpeg">
+    <audio controls autoplay>
+        <source src="${cancion.getArchivo()}" type="audio/mpeg">
+        <source src="${cancion.getArchivo()}" type="audio/mp3">
     </audio>
+    
 </body>
 </html>

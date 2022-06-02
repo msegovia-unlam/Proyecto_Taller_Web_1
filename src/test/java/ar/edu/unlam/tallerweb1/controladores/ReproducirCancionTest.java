@@ -30,6 +30,20 @@ public class ReproducirCancionTest {
         ModelAndView mav = cuandoVoyAVistaReproductor(cancion);
         CancionCargada(mav, cancion);
     }
+    @Test void SeReproduceCancionPeroCancionEsNull(){
+        cancion = SiNoExisteUnaCancion();
+       ModelAndView mav = cuandoVoyAVistaReproductor(cancion);
+       errorPorNullIDNull(mav);
+    }
+
+    private void errorPorNullIDNull(ModelAndView mav) {
+        assertThat(mav.getModel("Cancion")).isNull();
+    }
+
+    private Cancion SiNoExisteUnaCancion() {
+        Long idnegativo  =  Long.valueOf("-1");
+        return controlador.reproducirCancion(cancion.getId(idnegativo));
+    }
 
     private Cancion SiExisteUnaCancion(String nombreCancion, String pathArchivo) {
         cancion = new Cancion(nombreCancion, pathArchivo);
