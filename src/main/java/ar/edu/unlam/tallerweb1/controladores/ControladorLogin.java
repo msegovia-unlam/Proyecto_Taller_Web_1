@@ -93,7 +93,7 @@ public class ControladorLogin {
 	@RequestMapping(path = "/cerrar-sesion")
 	public ModelAndView cerrarSesion(HttpServletRequest request) {
 		request.getSession().invalidate();
-		return new ModelAndView("redirect:/login");
+		return new ModelAndView("redirect:/home");
 	}
 	
 	// Escucha la URL /home por GET, y redirige a una vista.
@@ -101,15 +101,23 @@ public class ControladorLogin {
 	public ModelAndView irAHome(HttpServletRequest request) {
 		List<Cancion> canciones = servicioCancion.getAllCanciones();
 		ModelMap model = new ModelMap();
-		String nombreUsuario = request.getSession().getAttribute("NOMBRE").toString();
-		model.put("nombreUsuario", nombreUsuario);
+		
+			try {
+				String nombreUsuario = request.getSession().getAttribute("NOMBRE").toString();
+				model.put("nombreUsuario",nombreUsuario);
+			} catch (Exception e) {
+				model.put("error", e);
+			}
+		
+		
 		model.put("canciones", canciones);
+		model.put("nombre", "Federico");
 		return new ModelAndView("home",model);
 	}
 
 	// Escucha la url /, y redirige a la URL /login, es lo mismo que si se invoca la url /login directamente.
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public ModelAndView inicio() {
-		return new ModelAndView("redirect:/login");
+		return new ModelAndView("redirect:/home");
 	}
 }

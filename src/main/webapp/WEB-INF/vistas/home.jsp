@@ -7,14 +7,21 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap theme -->
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<title>TIMELESS MUSIC</title>
 </head>
 <body>
 	<div class="container">
-		<h1>Bienvenido ${nombreUsuario}</h1>
-		<c:if test="${nombreUsuario!=null}">
-			<a href="lista-canciones" class="btn btn-black">LISTA DE
+		<h1>TIMELESS MUSIC</h1>
+		<a href="lista-canciones" class="btn btn-black">LISTA DE
 				CANCIONES</a>
+		<a href="streamings" class="btn btn-black">LISTA DE
+				STREAMINGS</a>
+		<c:if test="${nombreUsuario!=null}">
+			<a href="#">${nombreUsuario}</a>
 			<a href="cerrar-sesion">Cerrar sesion</a>
+		</c:if>
+		<c:if test="${nombreUsuario==null}">
+			<a href="login">Iniciar sesion</a>
 		</c:if>
 		<div>
 			<c:if test="${not empty canciones}">
@@ -32,6 +39,7 @@
 								<td>${cancion.nombre }</td>
 								<td>${cancion.artista.nombre}</td>
 								<td>${cancion.album}</td>
+								<td><a href="reproductor?id=${cancion.id}">Play</a></td>
 							</tr>
 						</c:forEach>
 

@@ -9,11 +9,20 @@
 <!-- Bootstrap theme -->
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>TIMELESS MUSIC</title>
 </head>
 <body>
 	<a href="home">Home</a>
-	<a href="agregar-cancion">AGREGAR CANCION</a>
+	<a href="streamings" class="btn btn-black">LISTA DE
+				STREAMINGS</a>
+	<c:if test="${nombreUsuario!=null}">
+		<a href="agregar-cancion">AGREGAR CANCION</a>
+		<a href="#">${nombreUsuario}</a>
+		<a href="cerrar-sesion">Cerrar sesion</a>
+	</c:if>
+	<c:if test="${nombreUsuario==null}">
+		<a href="login">Iniciar sesion</a>
+	</c:if>
 	<form action="lista-canciones">
 		<input type="text" name="busqueda" id="busqueda"
 			placeholder="Buscar por nombre de cancion"> <input
@@ -34,6 +43,7 @@
 						<td>${cancion.nombre }</td>
 						<td>${cancion.artista.nombre}</td>
 						<td>${cancion.album}</td>
+						<td><a href="${cancion.getArchivo()}">Play</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

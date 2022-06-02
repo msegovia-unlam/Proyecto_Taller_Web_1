@@ -41,4 +41,10 @@ public class ServicioCancionImpl implements ServicioCancion{
 		return repositorioCancion.getAllCanciones();
 	}
 
+	@Override
+	public Cancion getCancionbyID(Long id){
+		return repositorioCancion.getCancionbyID(id);
+	}
+
+
 }

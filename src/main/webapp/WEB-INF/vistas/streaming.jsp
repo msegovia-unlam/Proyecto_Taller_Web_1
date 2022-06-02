@@ -7,9 +7,10 @@
 		<meta charset="ISO-8859-1">
 		<link href="<c:url value="/css/bootstrap.min.css" />" rel="stylesheet">
 		<script src="<c:url value="/js/example.js" />"></script>
-		<title>Streaming</title>
+		<title>TIMELESS MUSIC</title>
 	</head>
 	<body>
+		<a href="home">HOME</a>
 		<table class="table table-hover">
 			<thead>
 				<tr>

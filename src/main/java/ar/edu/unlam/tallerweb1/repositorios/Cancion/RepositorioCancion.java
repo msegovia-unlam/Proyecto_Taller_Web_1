@@ -9,4 +9,5 @@ public interface RepositorioCancion {
 	public void guardarCancion(Cancion cancion);
 	public List<Cancion> buscarCancionPorNombre(String nombre);
 	public List<Cancion> getAllCanciones();
+	public Cancion getCancionbyID(Long id);
 }

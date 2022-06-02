@@ -48,4 +48,10 @@ public class RepositorioCancionImpl implements RepositorioCancion{
 				.list();
 	}
 
+	@Override
+	public Cancion getCancionbyID(Long id) {
+		return (Cancion) sessionFactory.getCurrentSession().createCriteria(Cancion.class)
+				.add(Restrictions.eq("id", id)).uniqueResult();
+	}
+
 }
