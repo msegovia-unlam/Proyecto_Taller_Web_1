@@ -36,6 +36,7 @@
 								<td>${cancion.nombre }</td>
 								<td>${cancion.artista.nombre}</td>
 								<td>${cancion.album}</td>
+								<td><a href="reproductor?id=${cancion.id}">Play</a></td>
 							</tr>
 						</c:forEach>
 
