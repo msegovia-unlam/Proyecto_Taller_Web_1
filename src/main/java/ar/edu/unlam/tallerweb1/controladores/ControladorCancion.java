@@ -60,7 +60,6 @@ public class ControladorCancion {
 		Usuario artistaGuardado = servicioLogin.buscarPorId((Long) request.getSession().getAttribute("ID"));
 		Cancion cancionAGuardar = new Cancion();
 		cancionAGuardar.setNombre(nombre);
-		cancionAGuardar.setAlbum(album);
 		cancionAGuardar.setArtista(artistaGuardado);
 		cancionAGuardar.setArchivo(pathArchivoGuardado);
 		servicioCancion.guardarCancion(cancionAGuardar);

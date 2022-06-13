@@ -17,9 +17,10 @@ public class Cancion {
 	@ManyToOne
 	private Usuario artista;
 	
-	private String album;
-	
 	private String pathArchivo;
+	
+	private Long reproducciones;
+	
 	
 	public Long getId() {
 		return id;
@@ -45,13 +46,6 @@ public class Cancion {
 		this.artista = artista;
 	}
 	
-	public String getAlbum() {
-		return album;
-	}
-	
-	public void setAlbum(String album) {
-		this.album = album;
-	}
 	
 	public String getArchivo() {
 		return this.pathArchivo;
@@ -59,10 +53,18 @@ public class Cancion {
 	
 	public void setArchivo(String archivo) {
 		this.pathArchivo = archivo;
+	}	
+	
+    public Long getReproducciones() {
+		return reproducciones;
 	}
 
-    public Cancion(){}
+	public void setReproducciones(Long reproducciones) {
+		this.reproducciones = reproducciones;
+	}
 
+	public Cancion(){}
+    
     public Cancion(String nombreCancion, String pathArchivo) {
         this.nombre = nombreCancion;
         this.pathArchivo = pathArchivo;

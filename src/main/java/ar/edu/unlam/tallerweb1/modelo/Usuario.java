@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 // Clase que modela el concepto de Usuario, la anotacion @Entity le avisa a hibernate que esta clase es persistible
 // el paquete ar.edu.unlam.tallerweb1.modelo esta indicado en el archivo hibernateCOntext.xml para que hibernate
@@ -22,6 +23,10 @@ public class Usuario {
 	private String password;
 	private String rol;
 	private Boolean activo = false;
+	@ManyToOne
+	private Compra compra;
+	private String genero;
+	
 	
 	public Long getId() {
 		return id;
@@ -67,4 +72,18 @@ public class Usuario {
     public void activar() {
 		activo = true;
     }
+	public Compra getCompra() {
+		return compra;
+	}
+	public void setCompra(Compra compra) {
+		this.compra = compra;
+	}
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+    
+    
 }
