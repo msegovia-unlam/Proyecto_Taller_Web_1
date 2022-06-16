@@ -11,4 +11,6 @@ public interface ServicioCancion {
 	public List<Cancion> buscarCancionPorNombre(String nombre);
 	public List<Cancion> getAllCanciones();
 	public Cancion getCancionbyID(Long id);
+
+    List<Cancion> top(Integer top);
 }

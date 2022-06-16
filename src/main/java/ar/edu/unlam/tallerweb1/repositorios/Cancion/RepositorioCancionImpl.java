@@ -1,10 +1,12 @@
 package ar.edu.unlam.tallerweb1.repositorios.Cancion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -53,5 +55,12 @@ public class RepositorioCancionImpl implements RepositorioCancion{
 		return (Cancion) sessionFactory.getCurrentSession().createCriteria(Cancion.class)
 				.add(Restrictions.eq("id", id)).uniqueResult();
 	}
+
+    @Override
+    public List<Cancion> top(Integer top) {
+		return sessionFactory.getCurrentSession().createCriteria(Cancion.class)
+				.addOrder(Order.desc("reproducciones")).setMaxResults(top).list();
+
+    }
 
 }
