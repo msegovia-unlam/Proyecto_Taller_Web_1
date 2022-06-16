@@ -21,6 +21,7 @@ public class Cancion {
 	
 	private Long reproducciones;
 	
+	private String album;
 	
 	public Long getId() {
 		return id;
@@ -47,20 +48,30 @@ public class Cancion {
 	}
 	
 	
-	public String getArchivo() {
-		return this.pathArchivo;
-	}
-	
-	public void setArchivo(String archivo) {
-		this.pathArchivo = archivo;
-	}	
-	
     public Long getReproducciones() {
 		return reproducciones;
 	}
 
 	public void setReproducciones(Long reproducciones) {
 		this.reproducciones = reproducciones;
+	}
+
+	
+	
+	public String getPathArchivo() {
+		return pathArchivo;
+	}
+
+	public void setPathArchivo(String pathArchivo) {
+		this.pathArchivo = pathArchivo;
+	}
+
+	public String getAlbum() {
+		return album;
+	}
+
+	public void setAlbum(String album) {
+		this.album = album;
 	}
 
 	public Cancion(){}

@@ -12,10 +12,9 @@
 <body>
 	<div class="container">
 		<h1>TIMELESS MUSIC</h1>
-		<a href="lista-canciones" class="btn btn-black">LISTA DE
-				CANCIONES</a>
-		<a href="streamings" class="btn btn-black">LISTA DE
-				STREAMINGS</a>
+		<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
+		<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS</a>
+		<a href="lista-conciertos" class="btn btn-black">LISTA DE CONCIERTOS</a>
 		<c:if test="${nombreUsuario!=null}">
 			<a href="#">${nombreUsuario}</a>
 			<a href="cerrar-sesion">Cerrar sesion</a>
@@ -23,7 +22,64 @@
 		<c:if test="${nombreUsuario==null}">
 			<a href="login">Iniciar sesion</a>
 		</c:if>
+
 		<div>
+			<h3>CONCIERTOS</h3>
+			<c:if test="${not empty conciertos}">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Fecha</th>
+							<th scope="col">Hora</th>
+							<th scope="col">Lugar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="concierto" items="${conciertos}" begin="0">
+							<tr>
+								<td>${concierto.fecha}</td>
+								<td>${concierto.hora}</td>
+								<td>${concierto.lugar}</td>
+							</tr>
+						</c:forEach>
+
+					</tbody>
+				</table>
+			</c:if>
+			<c:if test="${empty conciertos}">
+				<h5>${mensajeConciertos}</h5>
+			</c:if>
+		</div>
+
+		<div>
+			<h3>ARTISTAS</h3>
+			<c:if test="${not empty artistas}">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Nombre Artista</th>
+							<th scope="col">Genero</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="artista" items="${artistas}" begin="0">
+							<tr>
+								<td><a href="artista?id=${artista.id}">${artista.nombre }</a></td>
+								<td>${artista.genero}</td>
+							</tr>
+						</c:forEach>
+
+					</tbody>
+				</table>
+			</c:if>
+			<c:if test="${empty artistas}">
+				<h5>${mensajeArtistas}</h5>
+			</c:if>
+		</div>
+
+
+		<div>
+			<h3>CANCIONES</h3>
 			<c:if test="${not empty canciones}">
 				<table class="table">
 					<thead>
@@ -45,6 +101,9 @@
 
 					</tbody>
 				</table>
+			</c:if>
+			<c:if test="${empty canciones}">
+				<h5>${mensajeCanciones}</h5>
 			</c:if>
 		</div>
 	</div>

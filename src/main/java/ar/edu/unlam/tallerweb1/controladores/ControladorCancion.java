@@ -61,7 +61,7 @@ public class ControladorCancion {
 		Cancion cancionAGuardar = new Cancion();
 		cancionAGuardar.setNombre(nombre);
 		cancionAGuardar.setArtista(artistaGuardado);
-		cancionAGuardar.setArchivo(pathArchivoGuardado);
+		cancionAGuardar.setPathArchivo(pathArchivoGuardado);
 		servicioCancion.guardarCancion(cancionAGuardar);
 		attributes.addFlashAttribute("mensaje", "Se guardo correctamente la cancion");
 		return new ModelAndView("redirect:/agregar-cancion");

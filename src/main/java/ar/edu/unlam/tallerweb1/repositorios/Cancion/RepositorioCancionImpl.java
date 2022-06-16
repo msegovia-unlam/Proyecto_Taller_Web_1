@@ -54,4 +54,13 @@ public class RepositorioCancionImpl implements RepositorioCancion{
 				.add(Restrictions.eq("id", id)).uniqueResult();
 	}
 
+
+
+	@Override
+	public List<Cancion> getCancionesByArtista(long id) {
+		return sessionFactory.getCurrentSession().createCriteria(Cancion.class)
+				.createAlias("artista", "art")
+				.add(Restrictions.eq("art.id", id)).list();
+	}
+
 }

@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,6 +40,11 @@ public class ServicioLoginImpl implements ServicioLogin {
 	public Usuario buscarPorId(Long id) {
 	
 		return servicioLoginDao.buscarPorId(id);
+	}
+
+	@Override
+	public List<Usuario> getAllUsers() {
+		return servicioLoginDao.getAllUsers();
 	}
 
 }

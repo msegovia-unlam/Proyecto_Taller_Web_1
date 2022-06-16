@@ -10,4 +10,5 @@ public interface RepositorioCancion {
 	public List<Cancion> buscarCancionPorNombre(String nombre);
 	public List<Cancion> getAllCanciones();
 	public Cancion getCancionbyID(Long id);
+	public List<Cancion> getCancionesByArtista(long id);
 }

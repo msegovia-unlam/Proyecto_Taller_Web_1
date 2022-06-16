@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+
+import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
@@ -8,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Concierto {
@@ -18,10 +22,30 @@ public class Concierto {
 	
 	@ManyToMany
 	private List<Usuario> usuarios;
-	
-	private Date fecha;
+
+	private String hora;
 	
 	private String lugar;
+	
+	@Temporal(TemporalType.DATE)
+	private Date fecha;
+	
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+
 
 	public Long getId() {
 		return id;
