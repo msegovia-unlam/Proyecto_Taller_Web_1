@@ -43,7 +43,7 @@
 						<td>${cancion.nombre }</td>
 						<td>${cancion.artista.nombre}</td>
 						<td>${cancion.album}</td>
-						<td><a href="${cancion.getArchivo()}">Play</a></td>
+						<td><a href="${cancion.pathArchivo}">Play</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

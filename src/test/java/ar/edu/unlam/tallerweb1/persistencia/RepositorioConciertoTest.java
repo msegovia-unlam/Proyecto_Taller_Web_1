@@ -89,8 +89,8 @@ public class RepositorioConciertoTest extends SpringTest{
 		session().save(u2);
 		session().save(u1);
 		List<Usuario> usuarios = repositorioUsuario.getAllUsers();
-		Concierto concierto1 = crearConcierto(new Date(2022,6,16), null, "Casa", usuarios);
-		Concierto concierto2 = crearConcierto(new Date(2022,6,16), null, "Casa", usuarios);
+		Concierto concierto1 = crearConcierto(new Date(2022,6,17), null, "Casa", usuarios);
+		Concierto concierto2 = crearConcierto(new Date(2022,6,17), null, "Casa", usuarios);
 		Concierto concierto3 = crearConcierto(new Date(2022,8,16), null, "Casa", usuarios);
 
 		session().save(concierto1);
