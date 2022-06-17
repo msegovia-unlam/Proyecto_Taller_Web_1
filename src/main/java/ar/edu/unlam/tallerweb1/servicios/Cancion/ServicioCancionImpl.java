@@ -46,5 +46,10 @@ public class ServicioCancionImpl implements ServicioCancion{
 		return repositorioCancion.getCancionbyID(id);
 	}
 
+    @Override
+    public List<Cancion> top(Integer top) {
+        return repositorioCancion.top(top);
+    }
+
 
 }
