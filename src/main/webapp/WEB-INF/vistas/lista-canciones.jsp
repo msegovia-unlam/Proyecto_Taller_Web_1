@@ -13,8 +13,11 @@
 </head>
 <body>
 	<a href="home">Home</a>
-	<a href="streamings" class="btn btn-black">LISTA DE
-				STREAMINGS</a>
+	<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
+	<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a>
+	<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS</a>
+	<a href="lista-conciertos" class="btn btn-black">LISTA DE
+		CONCIERTOS</a>
 	<c:if test="${nombreUsuario!=null}">
 		<a href="agregar-cancion">AGREGAR CANCION</a>
 		<a href="#">${nombreUsuario}</a>
@@ -43,7 +46,7 @@
 						<td>${cancion.nombre }</td>
 						<td>${cancion.artista.nombre}</td>
 						<td>${cancion.album}</td>
-						<td><a href="${cancion.getArchivo()}">Play</a></td>
+						<td><a href="${cancion.pathArchivo}">Play</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -52,7 +55,7 @@
 	<c:if test="${mensaje!=null}">
 		<h3>${mensaje}</h3>
 	</c:if>
-	
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>

@@ -14,6 +14,11 @@
 </head>
 <body>
 	<a href="home">HOME</a>
+	<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
+	<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a>
+	<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS</a>
+	<a href="lista-conciertos" class="btn btn-black">LISTA DE
+		CONCIERTOS</a>
 	<video controls autoplay name="media">
 		<source src="${cancion.getArchivo()}" type="audio/mpeg">
 	</video>

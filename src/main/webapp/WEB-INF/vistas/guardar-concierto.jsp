@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
 	<h3>Fecha: ${fecha}</h3>
 	<h3>Hora: ${hora}</h3>
 	<h3>Lugar: ${lugar}</h3>

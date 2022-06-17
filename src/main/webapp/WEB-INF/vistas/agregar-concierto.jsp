@@ -12,20 +12,22 @@
 <body>
 	<a href="home">Home</a>
 	<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
+	<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a>
 	<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS</a>
+	<a href="lista-conciertos" class="btn btn-black">LISTA DE
+		CONCIERTOS</a>
 	<div class="container">
 		<div id="loginbox" style="margin-top: 50px;"
 			class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 			<form action="saveConcierto" method="POST">
-				<input name="fecha" id="fecha" type="date"/>
-				<input name="hora" id="hora" type="text" /> 
-				<select class="form-select" multiple name="artistas">
+				<input name="fecha" id="fecha" type="date" /> <input name="hora"
+					id="hora" type="text" /> <select class="form-select" multiple
+					name="artistas">
 					<c:forEach var="artista" items="${artistas}" begin="0">
 						<option value="${artista.id}">${artista.nombre}</option>
 					</c:forEach>
-				</select> 
-				<input name="lugar" id="lugar" type="lugar" required
-					placeholder="Ingrese el lugar del concierto" /> 
+				</select> <input name="lugar" id="lugar" type="lugar" required
+					placeholder="Ingrese el lugar del concierto" />
 				<button type="submit">GUARDAR CONCIERTO</button>
 			</form>
 
