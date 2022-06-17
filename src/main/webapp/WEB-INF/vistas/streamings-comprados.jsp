@@ -17,7 +17,6 @@
 					<th>Id</th>
 					<th>Artista</th>
 					<th>Stream</th>
-					<th>Comprar</th>
 				</tr>				
 			</thead>
 			<tbody>				
@@ -26,7 +25,6 @@
 						<td>${streaming.id}</td>
 						<td>${streaming.artista}</td>
 						<td><a href="${streaming.url}" target="_blank">Ver streaming</a></td>
-						<td><button type="button" class="btn btn-success"><a href="/proyecto-limpio-spring/compraStreaming/${streaming.id}">Comprar</a></button></td>
 					</tr>
 				</c:forEach>
 			</tbody>

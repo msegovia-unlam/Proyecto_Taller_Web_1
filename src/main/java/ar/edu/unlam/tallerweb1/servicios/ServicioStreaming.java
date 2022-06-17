@@ -8,4 +8,7 @@ public interface ServicioStreaming {
 	
 	List<Streaming> obtenerStreamings();
 	
+	void comprarStreaming(int id);
+	
+	List<Streaming> obtenerStreamingsComprados();
 }

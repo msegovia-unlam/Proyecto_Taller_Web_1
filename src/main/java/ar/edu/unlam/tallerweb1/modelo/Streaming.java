@@ -12,7 +12,7 @@ public class Streaming {
 
 	@Id @GeneratedValue
 	@Column(name = "id")
-	private int id;
+	private Integer id;
 
 	@Column(name = "artista")	
 	private String artista;
@@ -32,10 +32,10 @@ public class Streaming {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

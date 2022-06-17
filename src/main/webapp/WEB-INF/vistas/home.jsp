@@ -15,7 +15,11 @@
 		<a href="lista-canciones" class="btn btn-black">LISTA DE
 				CANCIONES</a>
 		<a href="streamings" class="btn btn-black">LISTA DE
-				STREAMINGS</a>
+				STREAMINGS DISPONIBLES</a>
+		
+		<a href="streamingsComprados" class="btn btn-black">LISTA DE
+				STREAMINGS COMPRADOS</a>
+		
 		<c:if test="${nombreUsuario!=null}">
 			<a href="#">${nombreUsuario}</a>
 			<a href="cerrar-sesion">Cerrar sesion</a>
