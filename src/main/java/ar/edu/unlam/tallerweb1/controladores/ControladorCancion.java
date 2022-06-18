@@ -90,5 +90,12 @@ public class ControladorCancion {
 		model.put("canciones", canciones);
 		return new ModelAndView("lista-canciones", model);
 	}
-
+	@RequestMapping(path = "/listatop", method = RequestMethod.GET)
+	public ModelAndView listaTop(Integer top) {
+		List<Cancion> canciones;
+		canciones = servicioCancion.top(top);
+		ModelMap model = new ModelMap();
+		model.put("canciones", canciones);
+		return new ModelAndView("listatop", model);
+	}
 }

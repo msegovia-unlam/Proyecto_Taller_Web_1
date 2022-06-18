@@ -13,9 +13,13 @@
 	<div class="container">
 		<h1>TIMELESS MUSIC</h1>
 		<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
-		<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a>
-		<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS</a>
-		<a href="lista-conciertos" class="btn btn-black">LISTA DE CONCIERTOS</a>
+		<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a> 
+		 <a href="lista-conciertos" class="btn btn-black">LISTA DE CONCIERTOS</a>
+		<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS
+			DISPONIBLES</a> 
+			<a href="streamingsComprados" class="btn btn-black">LISTA
+			DE STREAMINGS COMPRADOS</a>
+
 		<c:if test="${nombreUsuario!=null}">
 			<a href="#">${nombreUsuario}</a>
 			<a href="cerrar-sesion">Cerrar sesion</a>

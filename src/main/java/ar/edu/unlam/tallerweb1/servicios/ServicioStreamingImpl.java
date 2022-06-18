@@ -24,4 +24,14 @@ public class ServicioStreamingImpl implements ServicioStreaming{
 		return servicioStreamingDao.obtenerStreamings();
 	}
 
+	@Override
+	public void comprarStreaming(int id) {
+		servicioStreamingDao.comprarStreaming(id);
+	}
+
+	@Override
+	public List<Streaming> obtenerStreamingsComprados() {
+		return servicioStreamingDao.obtenerStreamingsComprados();
+	}
+
 }

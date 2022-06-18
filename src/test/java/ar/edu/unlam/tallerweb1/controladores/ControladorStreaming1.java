@@ -45,7 +45,6 @@ public class ControladorStreaming1 {
 		
 		ModelMap modelo = new ModelMap();
 		modelo.put("url", url);
-		
 		return new ModelAndView("ver-streaming", modelo);		
 		
 	}

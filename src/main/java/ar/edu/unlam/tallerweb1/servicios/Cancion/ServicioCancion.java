@@ -12,4 +12,6 @@ public interface ServicioCancion {
 	public List<Cancion> getAllCanciones();
 	public Cancion getCancionbyID(Long id);
 	public List<Cancion> getCancionesByArtista(long idArtista);
+    public List<Cancion> top(Integer top);
+
 }
