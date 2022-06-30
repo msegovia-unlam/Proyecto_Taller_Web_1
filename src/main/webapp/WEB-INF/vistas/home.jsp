@@ -13,9 +13,9 @@
 	<div class="container">
 		<h1>TIMELESS MUSIC</h1>
 		<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
-		<a href="lista-albunes" class="btn btn-black">LISTA DE ALBUNES</a>
-		<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a> 
-		 <a href="lista-conciertos" class="btn btn-black">LISTA DE CONCIERTOS</a>
+		<a href="lista-albunes" class="btn btn-black">LISTA DE ALBUNES</a> <a
+			href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a> <a
+			href="lista-conciertos" class="btn btn-black">LISTA DE CONCIERTOS</a>
 		<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS
 			DISPONIBLES</a> 
 			<a href="streamingsComprados" class="btn btn-black">LISTA
@@ -28,7 +28,7 @@
 		<c:if test="${nombreUsuario==null}">
 			<a href="login">Iniciar sesion</a>
 		</c:if>
-		
+
 		<div>
 			<h3>ALBUNES</h3>
 			<c:if test="${not empty albunes}">
@@ -37,7 +37,7 @@
 						<tr>
 							<th scope="col">Nombre</th>
 							<th scope="col">Artista</th>
-							
+
 						</tr>
 					</thead>
 					<tbody>
@@ -55,7 +55,7 @@
 				<h5>${mensajeAlbunes}</h5>
 			</c:if>
 		</div>
-		
+
 		<div>
 			<h3>CONCIERTOS</h3>
 			<c:if test="${not empty conciertos}">

@@ -11,11 +11,14 @@
 </head>
 <body>
 	<a href="home">Home</a>
-	<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
-	<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a>
-	<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS</a>
-	<a href="lista-conciertos" class="btn btn-black">LISTA DE
-		CONCIERTOS</a>
+		<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
+		<a href="lista-albunes" class="btn btn-black">LISTA DE ALBUNES</a> <a
+			href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a> <a
+			href="lista-conciertos" class="btn btn-black">LISTA DE CONCIERTOS</a>
+		<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS
+			DISPONIBLES</a> 
+			<a href="streamingsComprados" class="btn btn-black">LISTA
+			DE STREAMINGS COMPRADOS</a>
 	<div class="container">
 		<div id="loginbox" style="margin-top: 50px;"
 			class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">

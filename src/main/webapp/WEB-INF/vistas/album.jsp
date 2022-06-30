@@ -12,35 +12,45 @@
 <title>TIMELESS MUSIC</title>
 </head>
 <body>
+	<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
+	<a href="lista-albunes" class="btn btn-black">LISTA DE ALBUNES</a>
+	<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a>
+	<a href="lista-conciertos" class="btn btn-black">LISTA DE
+		CONCIERTOS</a>
+	<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS
+		DISPONIBLES</a>
+	<a href="streamingsComprados" class="btn btn-black">LISTA DE
+		STREAMINGS COMPRADOS</a>
 
 	<div>
-		<h2>${album.nombre}</h2>
-		<h5>Artista: ${album.usuario.nombre}</h5>
-	</div>
-	
-	<c:if test="${not empty canciones}">
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">Nombre</th>
-					<th scope="col">Artista</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="cancion" items="${canciones}" begin="0">
+		<div>
+			<h2>${album.nombre}</h2>
+			<h5>Artista: ${album.usuario.nombre}</h5>
+		</div>
+
+		<c:if test="${not empty canciones}">
+			<table class="table">
+				<thead>
 					<tr>
-						<td>${cancion.nombre }</td>
-						<td>${cancion.artista.nombre}</td>
-						<td><a href="${cancion.pathArchivo}">Play</a></td>
+						<th scope="col">Nombre</th>
+						<th scope="col">Artista</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</c:if>
-	<c:if test="${mensajeAlbunes!=null}">
-		<h3>${mensajeAlbunes}</h3>
-	</c:if>
-	
+				</thead>
+				<tbody>
+					<c:forEach var="cancion" items="${canciones}" begin="0">
+						<tr>
+							<td>${cancion.nombre }</td>
+							<td>${cancion.artista.nombre}</td>
+							<td><a href="${cancion.pathArchivo}">Play</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+		<c:if test="${mensajeAlbunes!=null}">
+			<h3>${mensajeAlbunes}</h3>
+		</c:if>
+	</div>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
