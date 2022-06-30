@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" time="0.097" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" time="0.111" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2021.2.2"/>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="11.0.15+10"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-11.0.15.10-hotspot\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1"/>
-    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
-    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.15+8-LTS-149"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.15\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="path.separator" value=";"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="user.script" value=""/>
     <property name="user.country" value="AR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Usuario\Desktop\Fede\Unlam\Taller Web\Primer Cuatri 2022\Proyecto\Proyecto_Taller_Web_1"/>
+    <property name="user.dir" value="C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
-    <property name="java.runtime.version" value="11.0.15+10"/>
+    <property name="java.runtime.version" value="11.0.15+8-LTS-149"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\Usuario\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\fandrija\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\plugins\maven\lib\maven-event-listener.jar"/>
-    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-11.0.15.10-hotspot\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-11.0.15\bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.15.10-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.15\bin;C:\Program Files\Git\cmd;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Symfony;C:\Program Files\Eclipse Adoptium\apache-maven-3.8.5\bin;C:\Users\Usuario\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\Usuario\anaconda3;C:\Users\Usuario\anaconda3\Library\mingw-w64\bin;C:\Users\Usuario\anaconda3\Library\usr\bin;C:\Users\Usuario\anaconda3\Library\bin;C:\Users\Usuario\anaconda3\Scripts;C:\Users\Usuario\AppData\Local\Microsoft\WindowsApps“;C:\Program Files\Java\jdk-11.0.15\bin;C:\Users\Usuario\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Usuario\AppData\Local\GitHubDesktop\bin;C:\Users\Usuario\AppData\Roaming\npm;C:\Users\Usuario\AppData\Roaming\Composer\vendor\bin;C:\Users\Usuario\AppData\Roaming\nvm;C:\Program Files\nodejs;."/>
-    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\plugins\maven\lib\maven3/conf"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.15\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_301\bin;C:\Program Files\Java\apache-maven-3.3.9\bin;C:\Program Files\PuTTY\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs;C:\nvm;C:\Program Files\nodejs;C:\Amazon\AWSCLIV2\;C:\instantclient_21_3;C:\Users\fandrija\AppData\Local\Microsoft\WindowsApps;C:\Users\fandrija\AppData\Local\Programs\Git\cmd;C:\Users\fandrija\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\plugins\maven\lib\maven3/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
-    <property name="user.home" value="C:\Users\Usuario"/>
+    <property name="user.home" value="C:\Users\fandrija"/>
     <property name="user.timezone" value="America/Buenos_Aires"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="11"/>
-    <property name="user.name" value="Andrijasevich Fede"/>
-    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
+    <property name="user.name" value="fandrija"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2021.2.2 install"/>
-    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-11.0.15.10-hotspot"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.15"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="11.0.15"/>
-    <property name="java.vendor" value="Eclipse Adoptium"/>
-    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\plugins\maven\lib\maven3"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\plugins\maven\lib\maven3"/>
     <property name="file.separator" value="\"/>
     <property name="java.version.date" value="2022-04-19"/>
-    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="java.vendor.version" value="Temurin-11.0.15+10"/>
+    <property name="java.vendor.version" value="18.9"/>
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" name="pruebaConexion" time="0.078"/>
-  <testcase classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" name="crearUsuario" time="0.019"/>
+  <testcase classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" name="pruebaConexion" time="0.081"/>
+  <testcase classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" name="crearUsuario" time="0.03"/>
 </testsuite>

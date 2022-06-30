@@ -53,8 +53,4 @@ public class Album {
 		this.canciones = canciones;
 	}
 	
-	public Album(String nombre, List<Cancion> canciones){
-		this.nombre = nombre;
-		this.canciones = canciones;
-	}
 }

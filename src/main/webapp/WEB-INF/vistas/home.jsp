@@ -13,6 +13,7 @@
 	<div class="container">
 		<h1>TIMELESS MUSIC</h1>
 		<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
+		<a href="lista-albunes" class="btn btn-black">LISTA DE ALBUNES</a>
 		<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a> 
 		 <a href="lista-conciertos" class="btn btn-black">LISTA DE CONCIERTOS</a>
 		<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS

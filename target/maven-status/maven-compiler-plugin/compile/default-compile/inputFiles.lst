@@ -1,15 +1,34 @@
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\servicios\Cancion\ServicioCancionImpl.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\servicios\Cancion\ServicioCancion.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\repositorios\Cancion\RepositorioCancionImpl.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioLoginImpl.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorLogin.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\repositorios\Cancion\RepositorioCancion.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioUsuario.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioLogin.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorCancion.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorReproductor.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\modelo\Cancion.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\controladores\DatosLogin.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\modelo\Usuario.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\utils\ArchivosUtils.java
-F:\2022\tallerweb\timeless\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioUsuarioImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\ArtistasSimilares.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Streaming.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\ListaReproduccion.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\Cancion\ServicioCancionImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioConciertoImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorConcierto.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioLoginImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\DatosLogin.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Compra.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioUsuario.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioStreaming.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioConcierto.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioStreamingImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioStreaming.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\Cancion\RepositorioCancionImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Votacion.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioStreamingImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorLogin.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Album.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\Cancion\ServicioCancion.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorSimple.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\StramingComprados.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioConcierto.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioUsuarioImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorStreaming.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\RepositorioConciertoImpl.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorCancion.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Cancion.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\controladores\ControladorReproductor.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Usuario.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\repositorios\Cancion\RepositorioCancion.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\utils\ArchivosUtils.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\modelo\Concierto.java
+C:\Users\fandrija\Documents\Repositorys\Federico Personal\Proyecto_Taller_Web_1\src\main\java\ar\edu\unlam\tallerweb1\servicios\ServicioLogin.java
