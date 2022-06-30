@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 
 import ar.edu.unlam.tallerweb1.SpringTest;
+import ar.edu.unlam.tallerweb1.modelo.Album;
 import ar.edu.unlam.tallerweb1.modelo.Cancion;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.repositorios.Cancion.RepositorioCancion;
@@ -41,6 +42,25 @@ public class RepositorioCancionTest extends SpringTest{
 		//assertEquals(2, cancionesPorArtista.size());
 	}
 	
+	@Test @Transactional @Rollback
+	public void testQueVerificaQueBusqueCancionesPorAlbum() {
+		Album album1 = crearAlbum(null, null);
+		Album album2 = crearAlbum(null, null);
+		session().save(album1);
+		session().save(album2);
+		Cancion cancion1 = crearCancion(null, null);
+		cancion1.setAlbum(album2);
+		Cancion cancion2 = crearCancion(null, null);
+		cancion2.setAlbum(album1);
+		Cancion cancion3 = crearCancion(null, null);
+		cancion1.setAlbum(album2);
+		session().save(cancion3);
+		session().save(cancion2);
+		session().save(cancion1);
+		List<Cancion> canciones = repositorioCancion.getCancionesByAlbumId(Long.valueOf(1));
+		assertThat(canciones).hasSize(1);
+	}
+	
 	private Cancion crearCancion(String nombre, Usuario artista) {
 		Cancion cancion = new Cancion();
 		cancion.setPathArchivo("archivo");
@@ -55,6 +75,13 @@ public class RepositorioCancionTest extends SpringTest{
 		usuario.setPassword(password);
 		usuario.setNombre(nombre);
 		return usuario;
+	}
+	
+	private Album crearAlbum(String nombre,Usuario usuario) {
+		Album album = new Album();
+		album.setNombre(nombre);
+		album.setUsuario(usuario);
+		return album;
 	}
 
 }

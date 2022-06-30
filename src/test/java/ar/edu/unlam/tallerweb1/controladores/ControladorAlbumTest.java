@@ -2,11 +2,13 @@ package ar.edu.unlam.tallerweb1.controladores;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyListOf;
 import static org.mockito.Matchers.anyLong;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,12 +22,14 @@ import ar.edu.unlam.tallerweb1.modelo.Album;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioAlbum;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
+import ar.edu.unlam.tallerweb1.servicios.Cancion.ServicioCancion;
 
 public class ControladorAlbumTest {
 
 	private ControladorAlbum controladorAlbum;
 	private ServicioAlbum servicioAlbum;
 	private ServicioLogin servicioLogin;
+	private ServicioCancion servicioCancion;
 	private HttpServletRequest request;
 	private RedirectAttributes redirectAttributes;
 	
@@ -36,12 +40,14 @@ public class ControladorAlbumTest {
 		request.setAttribute("ID", 1);
 		servicioAlbum = mock(ServicioAlbum.class);
 		servicioLogin = mock(ServicioLogin.class);
-		controladorAlbum = new ControladorAlbum(servicioAlbum, servicioLogin);
+		servicioCancion = mock(ServicioCancion.class);
+		controladorAlbum = new ControladorAlbum(servicioAlbum, servicioLogin, servicioCancion);
 	}
 
 	@Test
 	public void testQueVerificaListaDeAlbunes() {
 		ModelAndView mav = controladorAlbum.irAListaDeAlbunes(request);
+		when(servicioAlbum.getAllAlbunes()).thenReturn(new ArrayList<Album>());
 		assertThat(mav.getViewName()).isEqualTo("lista-albunes");
 	}
 	
@@ -49,7 +55,7 @@ public class ControladorAlbumTest {
 	public void testQueVerificaQueSeDirijaAVistaListaAlbunesConMensajeDeError() {
 		ModelAndView mav = controladorAlbum.irAListaDeAlbunes(request);
 		List<Album> albunes = servicioAlbum.getAllAlbunes();
-		when(servicioAlbum.getAllAlbunes()).thenReturn(albunes);
+		when(servicioAlbum.getAllAlbunes()).thenReturn(new ArrayList<Album>());
 		assertThat(albunes).hasSize(0);
 		assertThat(mav.getViewName()).isEqualTo("lista-albunes");
 		assertThat(mav.getModel().get("mensajeAlbunes")).isEqualTo("No existen albunes");
@@ -68,4 +74,5 @@ public class ControladorAlbumTest {
 		when(servicioLogin.buscarPorId(anyLong())).thenReturn(new Usuario());
 		assertThat(mav.getViewName()).isEqualTo("redirect:/crear-album");
 	}
+
 }

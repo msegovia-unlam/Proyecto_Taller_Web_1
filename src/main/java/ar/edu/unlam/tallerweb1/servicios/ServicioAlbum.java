@@ -12,4 +12,7 @@ public interface ServicioAlbum {
 
 	List<Album> getAlbunesByUsuarioId(Long usuarioId);
 
+	Album getAlbumById(Long id);
+	void updateAlbum(Album album);
+
 }

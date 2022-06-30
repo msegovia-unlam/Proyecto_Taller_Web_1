@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,20 +15,24 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ar.edu.unlam.tallerweb1.modelo.Album;
+import ar.edu.unlam.tallerweb1.modelo.Cancion;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioAlbum;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
+import ar.edu.unlam.tallerweb1.servicios.Cancion.ServicioCancion;
 
 @Controller
 public class ControladorAlbum {
 
 	private ServicioAlbum servicioAlbum;
 	private ServicioLogin servicioLogin;
+	private ServicioCancion servicioCancion;
 	
 	@Autowired
-	public ControladorAlbum(ServicioAlbum servicioAlbum, ServicioLogin servicioLogin) {
+	public ControladorAlbum(ServicioAlbum servicioAlbum, ServicioLogin servicioLogin, ServicioCancion servicioCancion) {
 		this.servicioAlbum = servicioAlbum;
 		this.servicioLogin = servicioLogin;
+		this.servicioCancion = servicioCancion;
 	}
 
 
@@ -79,6 +84,47 @@ public class ControladorAlbum {
 		}
 			
 		return new ModelAndView("redirect:/crear-album");
+	}
+	
+	@RequestMapping(path = "/album")
+	public ModelAndView irAAlbum(@RequestParam("id") Long id) {
+		ModelMap model = new ModelMap();
+		Album album = servicioAlbum.getAlbumById(id);
+		List<Cancion> canciones = servicioCancion.getCancionByAlbumId(id);
+		model.put("album", album);
+		model.put("canciones", canciones);
+		return new ModelAndView("album",model);
+	}
+	
+	@RequestMapping("/agregar-canciones-album")
+	public ModelAndView agregarCanciones(@RequestParam("id") Long id, HttpServletRequest request) {
+		ModelMap model = new ModelMap();
+		try {
+			List<Cancion> canciones = servicioCancion.getCancionesByArtista((long) request.getSession().getAttribute("ID"));
+			Album album = servicioAlbum.getAlbumById(id);
+			model.put("canciones", canciones);
+			model.put("album", album);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return new ModelAndView("agregar-canciones-album",model);
+	}
+	
+	@RequestMapping(path = "/add-canciones", method = RequestMethod.POST)
+	public ModelAndView addCanciones(@RequestParam("canciones") String[] canciones,
+			@RequestParam("id") Long id
+			) {
+		Album album = servicioAlbum.getAlbumById(Long.valueOf(id).longValue());
+		List<Cancion> cancionesEnAlbum = new ArrayList<Cancion>();
+		for(String cancion: canciones) {
+			cancionesEnAlbum.add(servicioCancion.getCancionbyID(Long.valueOf(cancion).longValue()));
+		}
+		for(Cancion cancion:cancionesEnAlbum) {
+			cancion.setAlbum(album);
+			servicioCancion.updateCancion(cancion);
+		}
+		
+		return new ModelAndView("redirect:/lista-albunes");
 	}
 	
 }

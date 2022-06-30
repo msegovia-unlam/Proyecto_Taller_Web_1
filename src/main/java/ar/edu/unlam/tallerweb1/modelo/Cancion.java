@@ -21,7 +21,8 @@ public class Cancion {
 	
 	private Long reproducciones;
 	
-	private String album;
+	@ManyToOne
+	private Album album;
 	
 	public Long getId() {
 		return id;
@@ -66,11 +67,11 @@ public class Cancion {
 		this.pathArchivo = pathArchivo;
 	}
 
-	public String getAlbum() {
+	public Album getAlbum() {
 		return album;
 	}
 
-	public void setAlbum(String album) {
+	public void setAlbum(Album album) {
 		this.album = album;
 	}
 

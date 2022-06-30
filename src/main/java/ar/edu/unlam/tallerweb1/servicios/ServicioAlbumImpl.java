@@ -33,4 +33,14 @@ public class ServicioAlbumImpl implements ServicioAlbum {
 		return repositorioAlbum.getAlbunesByUsuarioId(usuarioId);
 	}
 
+	@Override
+	public Album getAlbumById(Long id) {
+		return repositorioAlbum.getAlbumById(id);
+	}
+
+	@Override
+	public void updateAlbum(Album album) {
+		repositorioAlbum.updateAlbum(album);
+	}
+
 }

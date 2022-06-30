@@ -41,4 +41,15 @@ public class RepositorioAlbumImpl implements RepositorioAlbum {
 				.add(Restrictions.eq("us.id", idUsuario)).list();
 	}
 
+	@Override
+	public Album getAlbumById(Long id) {
+		return (Album) sessionFactory.getCurrentSession().createCriteria(Album.class)
+				.add(Restrictions.eq("id",id)).uniqueResult();
+	}
+
+	@Override
+	public void updateAlbum(Album album) {
+		sessionFactory.getCurrentSession().update(album);
+	}
+
 }

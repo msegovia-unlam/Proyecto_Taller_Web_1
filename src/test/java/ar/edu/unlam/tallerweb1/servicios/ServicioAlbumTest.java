@@ -53,11 +53,17 @@ public class ServicioAlbumTest {
 		verify(repositorioAlbum,times(1)).getAlbunesByUsuarioId(Long.valueOf(1));
 	}
 	
+	@Test
+	public void testQueVerificaMetodoGetAlbumById() {
+		Album album = servicioAlbum.getAlbumById(Long.valueOf(1));
+		verify(repositorioAlbum,times(1)).getAlbumById(anyLong());
+		when(repositorioAlbum.getAlbumById(anyLong())).thenReturn(new Album());
+	}
+	
 	private Album crearAlbum(String nombre,Usuario usuario, List<Cancion> canciones) {
 		Album album = new Album();
 		album.setNombre(nombre);
 		album.setUsuario(usuario);
-		album.setCanciones(canciones);
 		return album;
 	}
 	

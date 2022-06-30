@@ -11,5 +11,7 @@ public interface RepositorioCancion {
 	public Cancion getCancionbyID(Long id);
 	public List<Cancion> getCancionesByArtista(long id);
     public List<Cancion> top(Integer top);
+	public List<Cancion> getCancionesByAlbumId(Long id);
+	public void updateCancion(Cancion cancion);
 
 }

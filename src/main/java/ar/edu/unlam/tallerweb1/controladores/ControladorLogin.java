@@ -1,8 +1,10 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import ar.edu.unlam.tallerweb1.modelo.Album;
 import ar.edu.unlam.tallerweb1.modelo.Cancion;
 import ar.edu.unlam.tallerweb1.modelo.Concierto;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
+import ar.edu.unlam.tallerweb1.servicios.ServicioAlbum;
 import ar.edu.unlam.tallerweb1.servicios.ServicioConcierto;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
 import ar.edu.unlam.tallerweb1.servicios.Cancion.ServicioCancion;
@@ -37,13 +39,15 @@ public class ControladorLogin {
 	private ServicioLogin servicioLogin;
 	private ServicioCancion servicioCancion;
 	private ServicioConcierto servicioConcierto;
-
+	private ServicioAlbum servicioAlbum;
+	
 	@Autowired
 	public ControladorLogin(ServicioLogin servicioLogin, ServicioCancion servicioCancion,
-			ServicioConcierto servicioConcierto) {
+			ServicioConcierto servicioConcierto, ServicioAlbum servicioAlbum) {
 		this.servicioLogin = servicioLogin;
 		this.servicioCancion = servicioCancion;
 		this.servicioConcierto = servicioConcierto;
+		this.servicioAlbum = servicioAlbum;
 	}
 
 	// Este metodo escucha la URL localhost:8080/NOMBRE_APP/login si la misma es
@@ -119,6 +123,7 @@ public class ControladorLogin {
 		List<Concierto> proximosConciertos = servicioConcierto.getProximosConciertos();
 		List<Concierto> conciertosDelDiaDeHoy = servicioConcierto.getConciertosdeHoy();
 		List<Concierto> conciertos = servicioConcierto.getAllConciertos();
+		List<Album> albumes = servicioAlbum.getAllAlbunes();
 		ModelMap model = new ModelMap();
 
 		try {
@@ -158,6 +163,11 @@ public class ControladorLogin {
 			model.put("conciertos", conciertos);
 		}
 		
+		if (albumes.isEmpty()) {
+			model.put("mensajeAlbunes", "No se encuentran albunes");
+		} else {
+			model.put("albunes", albumes);
+		}
 		return new ModelAndView("home", model);
 	}
 
@@ -175,8 +185,10 @@ public class ControladorLogin {
 		if (usuario != null) {
 			String nombre = usuario.getNombre();
 			List<Cancion> canciones = servicioCancion.getCancionesByArtista(usuario.getId());
+			List<Album> albunes = servicioAlbum.getAlbunesByUsuarioId(id);
 			model.put("nombre", nombre);
 			model.put("canciones", canciones);
+			model.put("albunes", albunes);
 		}
 		return new ModelAndView("artista", model);
 	}

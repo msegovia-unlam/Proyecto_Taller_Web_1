@@ -12,4 +12,7 @@ public interface RepositorioAlbum {
 
 	List<Album> getAlbunesByUsuarioId(Long idUsuario);
 
+	Album getAlbumById(Long valueOf);
+	
+	void updateAlbum(Album album);
 }

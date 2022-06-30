@@ -26,7 +26,7 @@ public class RepositorioAlbumTest extends SpringTest{
 	
 	@Test @Transactional @Rollback
 	public void testQueVerificaQueSeAgregueUnAlbum() {
-		Album album1 = crearAlbum(null, null, null);
+		Album album1 = crearAlbum(null, null);
 		repositorioAlbum.guardarAlbum(album1);
 		List<Album> albunes= repositorioAlbum.getAllAlbunes();
 		assertThat(albunes).hasSize(1);
@@ -34,8 +34,8 @@ public class RepositorioAlbumTest extends SpringTest{
 	
 	@Test @Transactional @Rollback
 	public void testQueVerificaQueSeEncuentrenTodosLosAlbunes() {
-		Album album1 = crearAlbum(null, null, null);
-		Album album2 = crearAlbum(null, null, null);
+		Album album1 = crearAlbum(null, null);
+		Album album2 = crearAlbum(null, null);
 		session().save(album2);
 		session().save(album1);
 		List<Album> albunes= repositorioAlbum.getAllAlbunes();
@@ -48,10 +48,10 @@ public class RepositorioAlbumTest extends SpringTest{
 		Usuario usuario2 = crearUsuario(null, null, null);
 		session().save(usuario1);
 		session().save(usuario2);
-		Album album1 = crearAlbum(null, usuario1, null);
-		Album album2 = crearAlbum(null, usuario2, null);
-		Album album3 = crearAlbum(null, usuario1, null);
-		Album album4 = crearAlbum(null, usuario1, null);
+		Album album1 = crearAlbum(null, usuario1);
+		Album album2 = crearAlbum(null, usuario2);
+		Album album3 = crearAlbum(null, usuario1);
+		Album album4 = crearAlbum(null, usuario1);
 		session().save(album2);
 		session().save(album1);
 		session().save(album3);
@@ -59,6 +59,23 @@ public class RepositorioAlbumTest extends SpringTest{
 		List<Album> albunesPorUsuario = repositorioAlbum.getAlbunesByUsuarioId(1l);
 		assertThat(albunesPorUsuario).hasSize(3);
 	}
+	
+	@Test @Transactional @Rollback
+	public void testQueVerificaQueSeBusqueAlbumPorId() {
+		Album album1 = crearAlbum(null, null);
+		Album album2 = crearAlbum(null, null);
+		Album album3 = crearAlbum(null, null);
+		Album album4 = crearAlbum(null, null);
+		session().save(album1);
+		session().save(album2);
+		session().save(album3);
+		session().save(album4);
+		Album albumEncontrado = repositorioAlbum.getAlbumById(Long.valueOf(2));
+		assertThat(albumEncontrado).isNotNull();
+		assertThat(albumEncontrado.getId()).isEqualTo(album2.getId());
+	}
+	
+
 	
 	private Usuario crearUsuario(String email, String nombre, String password) {
 		Usuario usuario = new Usuario();
@@ -76,11 +93,10 @@ public class RepositorioAlbumTest extends SpringTest{
 		return cancion;
 	}
 	
-	private Album crearAlbum(String nombre,Usuario usuario, List<Cancion> canciones) {
+	private Album crearAlbum(String nombre,Usuario usuario) {
 		Album album = new Album();
 		album.setNombre(nombre);
 		album.setUsuario(usuario);
-		album.setCanciones(canciones);
 		return album;
 	}
 

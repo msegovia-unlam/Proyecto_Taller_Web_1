@@ -22,13 +22,40 @@
 			DE STREAMINGS COMPRADOS</a>
 
 		<c:if test="${nombreUsuario!=null}">
-			<a href="#">${nombreUsuario}</a>
+			<a href="perfil">${nombreUsuario}</a>
 			<a href="cerrar-sesion">Cerrar sesion</a>
 		</c:if>
 		<c:if test="${nombreUsuario==null}">
 			<a href="login">Iniciar sesion</a>
 		</c:if>
+		
+		<div>
+			<h3>ALBUNES</h3>
+			<c:if test="${not empty albunes}">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Artista</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="album" items="${albunes}" begin="0">
+							<tr>
+								<td><a href="album?id=${album.id}">${album.nombre}</a></td>
+								<td>${album.usuario.nombre}</td>
+							</tr>
+						</c:forEach>
 
+					</tbody>
+				</table>
+			</c:if>
+			<c:if test="${empty albunes}">
+				<h5>${mensajeAlbunes}</h5>
+			</c:if>
+		</div>
+		
 		<div>
 			<h3>CONCIERTOS</h3>
 			<c:if test="${not empty conciertos}">
@@ -100,7 +127,7 @@
 							<tr>
 								<td>${cancion.nombre }</td>
 								<td>${cancion.artista.nombre}</td>
-								<td>${cancion.album}</td>
+								<td>${cancion.album.nombre}</td>
 								<td><a href="reproductor?id=${cancion.id}">Play</a></td>
 							</tr>
 						</c:forEach>

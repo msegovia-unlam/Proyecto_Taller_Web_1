@@ -71,4 +71,20 @@ public class RepositorioCancionImpl implements RepositorioCancion{
     }
 
 
+
+	@Override
+	public List<Cancion> getCancionesByAlbumId(Long id) {
+		return sessionFactory.getCurrentSession().createCriteria(Cancion.class)
+				.createAlias("album", "alb")
+				.add(Restrictions.eq("alb.id", id)).list();
+	}
+
+
+
+	@Override
+	public void updateCancion(Cancion cancion) {
+		sessionFactory.getCurrentSession().update(cancion);
+		
+	}
+
 }

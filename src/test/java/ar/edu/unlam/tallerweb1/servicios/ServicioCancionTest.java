@@ -1,11 +1,14 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyListOf;
+import static org.mockito.Matchers.anyLong;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
@@ -41,6 +44,13 @@ public class ServicioCancionTest {
 	public void testQueVerifiqueMetodoBuscarPorArtistaId(){
 		List<Cancion> canciones = servicioCancion.getCancionesByArtista(2);
 		verify(repositorioCancion,times(1)).getCancionesByArtista(2);
+	}
+	
+	@Test
+	public void testQueVerificaMetodoGetCancionByAlbumId() {
+		List<Cancion> canciones = repositorioCancion.getCancionesByAlbumId(Long.valueOf(1));
+		verify(repositorioCancion,times(1)).getCancionesByAlbumId(anyLong());
+		when(repositorioCancion.getCancionesByAlbumId(anyLong())).thenReturn(new ArrayList<Cancion>());
 	}
 	
 	public Usuario crearUsuario() {

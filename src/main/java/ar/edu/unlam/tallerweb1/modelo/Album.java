@@ -16,8 +16,7 @@ public class Album {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
-	@ManyToMany
-	private List<Cancion> canciones;
+	
 	@ManyToOne
 	private Usuario usuario;
 
@@ -44,13 +43,4 @@ public class Album {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-	public List<Cancion> getCanciones() {
-		return canciones;
-	}
-
-	public void setCanciones(List<Cancion> canciones) {
-		this.canciones = canciones;
-	}
-	
 }

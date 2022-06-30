@@ -20,9 +20,35 @@
 	<a href="lista-conciertos" class="btn btn-black">LISTA DE
 		CONCIERTOS</a>
 	<h2>${nombre}</h2>
-
+	
 	<div>
-		<h4>
+			<h3>ALBUNES</h3>
+			<c:if test="${not empty albunes}">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Artista</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="album" items="${albunes}" begin="0">
+							<tr>
+								<td><a href="album?id=${album.id}">${album.nombre}</a></td>
+								<td>${album.usuario.nombre}</td>
+							</tr>
+						</c:forEach>
+
+					</tbody>
+				</table>
+			</c:if>
+			<c:if test="${empty albunes}">
+				<h5>${mensajeAlbunes}</h5>
+			</c:if>
+		</div>
+	
+	<div>
+		<h3>
 			CANCIONES
 			</h3>
 			<c:if test="${not empty canciones}">
@@ -37,7 +63,7 @@
 						<c:forEach var="cancion" items="${canciones}" begin="0">
 							<tr>
 								<td>${cancion.nombre }</td>
-								<td>${cancion.album}</td>
+								<td>${cancion.album.nombre}</td>
 								<td><a href="reproductor?id=${cancion.id}">Play</a></td>
 							</tr>
 						</c:forEach>

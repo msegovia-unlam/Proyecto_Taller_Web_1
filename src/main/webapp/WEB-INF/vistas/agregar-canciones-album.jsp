@@ -19,14 +19,16 @@
 	<div class="container">
 		<div id="loginbox" style="margin-top: 50px;"
 			class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-			<form action="saveCancion" method="POST"
-				enctype="multipart/form-data">
-				<input name="nombre" id="nombre" type="text" required
-					placeholder="Ingrese nombre de la cancion" /> <select
-					class="form-select" aria-label="Disabled select example" disabled>
-					<option selected>${nombreArtista}</option>
-				</select> <input name="archivo" id="archivo" type="file">
-				<button type="submit">GUARDAR CANCION</button>
+			<form action="add-canciones" method="POST" name="canciones">
+				<input type="hidden" name="id" value="${album.id}" placeholder="${album.nombre}" id="id">
+				 <select class="form-select"
+					multiple name="canciones">
+
+					<c:forEach var="cancion" items="${canciones}" begin="0">
+						<option value="${cancion.id}">${cancion.nombre}</option>
+					</c:forEach>
+				</select>
+				<button type="submit">AGREGAR CANCIONES</button>
 			</form>
 
 
@@ -55,5 +57,6 @@
 						.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
 	</script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
 </body>
 </html>

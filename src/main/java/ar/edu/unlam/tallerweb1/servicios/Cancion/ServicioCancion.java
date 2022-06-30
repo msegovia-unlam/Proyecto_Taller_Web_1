@@ -13,5 +13,7 @@ public interface ServicioCancion {
 	public Cancion getCancionbyID(Long id);
 	public List<Cancion> getCancionesByArtista(long idArtista);
     public List<Cancion> top(Integer top);
+	public List<Cancion> getCancionByAlbumId(Long id);
+	public void updateCancion(Cancion cancion);
 
 }

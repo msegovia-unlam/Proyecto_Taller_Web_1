@@ -51,8 +51,8 @@ public class ControladorCancion {
 
 	@RequestMapping(path = "/saveCancion", method = RequestMethod.POST)
 	public ModelAndView saveCancion(HttpServletRequest request, RedirectAttributes attributes,
-			@RequestParam("archivo") MultipartFile archivo, @RequestParam("nombre") String nombre,
-			@RequestParam("album") String album) throws IOException {
+			@RequestParam("archivo") MultipartFile archivo, 
+			@RequestParam("nombre") String nombre) throws IOException {
 		ModelMap model = new ModelMap();
 		String pathArchivo = pathArchivoCancion.replace("idArtista",
 			request.getSession().getAttribute("ID").toString());

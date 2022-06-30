@@ -58,4 +58,17 @@ public class ServicioCancionImpl implements ServicioCancion{
 	}
 
 
+	@Override
+	public List<Cancion> getCancionByAlbumId(Long id) {
+		return repositorioCancion.getCancionesByAlbumId(id);
+	}
+
+
+	@Override
+	public void updateCancion(Cancion cancion) {
+		repositorioCancion.updateCancion(cancion);
+		
+	}
+
+
 }

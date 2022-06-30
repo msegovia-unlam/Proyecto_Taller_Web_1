@@ -12,38 +12,26 @@
 <title>TIMELESS MUSIC</title>
 </head>
 <body>
-	<a href="home">Home</a>
-	<a href="lista-canciones" class="btn btn-black">LISTA DE CANCIONES</a>
-	<a href="listatop?top=10" class="btn btn-black">TOP CANCIONES</a>
-	<a href="streamings" class="btn btn-black">LISTA DE STREAMINGS</a>
-	<a href="lista-conciertos" class="btn btn-black">LISTA DE
-		CONCIERTOS</a>
-	<c:if test="${nombreUsuario!=null}">
-		<a href="crear-album">AGREGAR ALBUM</a>
-		<a href="#">${nombreUsuario}</a>
-		<a href="cerrar-sesion">Cerrar sesion</a>
-	</c:if>
-	<c:if test="${nombreUsuario==null}">
-		<a href="login">Iniciar sesion</a>
-	</c:if>
-	<form action="lista-canciones">
-		<input type="text" name="busqueda" id="busqueda"
-			placeholder="Buscar por nombre de cancion"> <input
-			type="submit" value="Buscar">
-	</form>
-	<c:if test="${not empty albunes}">
+
+	<div>
+		<h2>${album.nombre}</h2>
+		<h5>Artista: ${album.usuario.nombre}</h5>
+	</div>
+	
+	<c:if test="${not empty canciones}">
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">Nombre Albun</th>
+					<th scope="col">Nombre</th>
 					<th scope="col">Artista</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="album" items="${albunes}" begin="0">
+				<c:forEach var="cancion" items="${canciones}" begin="0">
 					<tr>
-						<td><a href="album?id=${album.id}">${album.nombre}</a></td>
-						<td>${album.usuario.nombre}</td>
+						<td>${cancion.nombre }</td>
+						<td>${cancion.artista.nombre}</td>
+						<td><a href="${cancion.pathArchivo}">Play</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -52,7 +40,7 @@
 	<c:if test="${mensajeAlbunes!=null}">
 		<h3>${mensajeAlbunes}</h3>
 	</c:if>
-
+	
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
